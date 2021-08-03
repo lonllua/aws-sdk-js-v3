@@ -10512,7 +10512,10 @@ const serializeAws_restXmlCompletedMultipartUpload = (
   input: CompletedMultipartUpload,
   context: __SerdeContext
 ): any => {
-  const bodyNode = new __XmlNode("CompletedMultipartUpload");
+  // fixme biming
+  // https://github.com/aws/aws-sdk-js-v3/issues/1814
+  // const bodyNode = new __XmlNode("CompletedMultipartUpload");
+  const bodyNode = new __XmlNode("CompleteMultipartUpload");
   if (input.Parts !== undefined && input.Parts !== null) {
     const nodes = serializeAws_restXmlCompletedPartList(input.Parts, context);
     nodes.map((node: any) => {
